@@ -1,0 +1,26 @@
+{
+    "name": "hiruki",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@nuxt/image": "^1.7.0",
+        "@nuxt/ui": "^2.17.0",
+        "@nuxtjs/google-fonts": "^3.2.0",
+        "@nuxtjs/seo": "2.0.0-rc.15",
+        "@vueuse/core": "^10.11.0",
+        "hls.js": "^1.5.13",
+        "nuxt": "^3.12.2",
+        "vidstack": "^1.11.29",
+        "vue": "^3.4.29",
+        "vue-router": "^4.3.3"
+    },
+    "author": "drxvill",
+    "license": "MIT"
+}
