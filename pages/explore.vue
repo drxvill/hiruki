@@ -16,10 +16,10 @@ const { data } = await useAsyncData("explorer", async () => {
         <Title>Exlore</Title>
     </Head>
     <div class="space-y-8 m-4">
-        <Section :data="data?.trending" :category="1" :explorer="true" :pagination="false" />
-        <Section :data="data?.popular" :category="2" :explorer="true" :pagination="false" />
-        <Section :data="data?.upcoming" :category="3" :explorer="true" :pagination="false" />
-        <Section :data="data?.favorite" :category="4" :explorer="true" :pagination="false" />
-        <Section :data="data?.movies" :category="5" :explorer="true" :pagination="false" />
+        <Cards :data="data?.trending" :category="1" :explorer="true" :pagination="false" />
+        <Cards :data="data?.popular" :category="2" :explorer="true" :pagination="false" />
+        <Cards :data="data?.upcoming" :category="3" :explorer="true" :pagination="false" />
+        <Cards :data="data?.favorite" :category="4" :explorer="true" :pagination="false" />
+        <Cards :data="data?.movies" :category="5" :explorer="true" :pagination="false" />
     </div>
 </template>

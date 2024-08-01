@@ -8,6 +8,6 @@ const { data } = await useFetch(`/api/movies?page=${route.params.page}&per=48`);
         <Title>Most Popular Movies</Title>
     </Head>
     <div class="space-y-8 m-4">
-        <Section :data="data" :category="5" :explorer="false" :pagination="true" />
+        <Cards :data="data" :category="5" :explorer="false" :pagination="true" />
     </div>
 </template>

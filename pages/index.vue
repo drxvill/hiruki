@@ -17,9 +17,9 @@ const { data } = await useAsyncData("categories", async () => {
         <Title>Free Anime Streaming</Title>
     </Head>
     <div class="space-y-4 m-4">
-        <Section :data="data?.trending" :category="1" :explorer="false" :pagination="false" />
-        <Section :data="data?.popular" :category="2" :explorer="false" :pagination="false" />
-        <Section :data="data?.upcoming" :category="3" :explorer="false" :pagination="false" />
-        <Section :data="data?.top" :category="6" :explorer="false" :pagination="false" />
+        <Cards :data="data?.trending" :category="1" :explorer="false" :pagination="false" />
+        <Cards :data="data?.popular" :category="2" :explorer="false" :pagination="false" />
+        <Cards :data="data?.upcoming" :category="3" :explorer="false" :pagination="false" />
+        <Cards :data="data?.top" :category="6" :explorer="false" :pagination="false" />
     </div>
 </template>
