@@ -27,7 +27,7 @@ function onClearAll() {
                 v-if="category === 7 && data.data.length > 0" />
             <UButton :to="category === 1 ? '/trending/1' : category === 2 ? '/popular/1' : category === 3
                 ? '/upcoming/1' : category === 4 ? '/favorite/1' : category === 5 ? '/movies/1' : '/'"
-                icon="i-heroicons-plus-16-solid" label="View More" variant="link" v-if="explorer" />
+                icon="i-heroicons-plus-circle-20-solid" label="View More" variant="ghost" v-if="explorer" />
         </div>
         <div class="flex justify-center items-center h-80" v-if="data.data.length < 1">
             <p class="text-xl font-semibold" v-if="category === 7">No Bookmarks</p>
@@ -44,38 +44,34 @@ function onClearAll() {
                 <p class="font-medium truncate">{{ anime.title }}</p>
                 <div class="flex items-center gap-2">
                     <UButton icon="i-heroicons-calendar-16-solid" :label="anime.year ? String(anime.year) : 'N/A'"
-                        color="gray" variant="solid" size="2xs" />
-                    <UButton icon="i-heroicons-star-16-solid" :label="anime.score ? anime.score : 'N/A'" color="gray"
-                        variant="solid" size="2xs" v-if="category !== 3" />
+                        color="white" size="2xs" />
+                    <UButton icon="i-heroicons-star-16-solid" :label="anime.score ? anime.score : 'N/A'" color="white"
+                        size="2xs" v-if="category !== 3" />
                 </div>
             </ULink>
         </div>
-        <div class="grid grid-cols-1 gap-4" v-if="category === 6">
-            <ULink :to="`/info/${anime.id}`"
-                class="flex items-center rounded-xl gap-4 transition-colors py-2 px-4 hover:bg-primary/50"
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" v-if="category === 6">
+            <div :to="`/info/${anime.id}`" class="flex items-center rounded-xl gap-4 transition-colors py-2 px-4"
                 v-for="(anime, index) in data.data">
                 <p class="w-12 text-2xl font-bold">#{{ index + 1 }}</p>
                 <div class="flex items-center w-full gap-4">
-                    <div class="w-20 h-20">
+                    <div class="w-16 h-24">
                         <NuxtImg :src="anime.cover" :alt="anime.title" format="webp" quality="80" sizes="100vw"
-                            placeholder width="100" height="100" class="w-full h-full rounded-full object-cover" />
+                            placeholder width="100" height="100" class="w-full h-full rounded-md object-cover" />
                     </div>
                     <div class="flex flex-1 flex-col gap-2">
                         <p class="font-medium line-clamp-2">{{ anime.title }}</p>
                         <div class="flex flex-wrap items-center gap-2">
-                            <UButton icon="i-heroicons-information-circle-16-solid" class="w-fit"
-                                :label="anime.format ? anime.format : 'N/A'" color="gray" variant="solid" size="2xs" />
                             <UButton icon="i-heroicons-calendar-days-16-solid" class="w-fit"
-                                :label="anime.season ? anime.season : 'N/A'" color="gray" variant="solid" size="2xs" />
-                            <UButton icon="i-heroicons-calendar-16-solid" class="w-fit"
-                                :label="anime.year ? String(anime.year) : 'N/A'" color="gray" variant="solid"
-                                size="2xs" />
+                                :label="anime.season ? anime.season : 'N/A'" color="white" size="2xs" />
                             <UButton icon="i-heroicons-star-16-solid" class="w-fit"
-                                :label="anime.score ? anime.score : 'N/A'" color="gray" variant="solid" size="2xs" />
+                                :label="anime.score ? anime.score : 'N/A'" color="white" size="2xs" />
                         </div>
+                        <UButton :to="`/info/${anime.id}`" icon="i-heroicons-play-solid" label="Watch Now"
+                            variant="ghost" size="sm" />
                     </div>
                 </div>
-            </ULink>
+            </div>
         </div>
     </div>
     <div class="flex justify-between items-center" v-if="data.pagination" v-show="pagination">

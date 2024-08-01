@@ -11,20 +11,15 @@
                     only linked to the media which is hosted on 3rd party services.</p>
             </div>
             <div class="hidden md:flex flex-col gap-2">
-                <UTooltip text="DMCA" :popper="{ placement: 'left' }">
-                    <UButton to="/dmca" icon="i-heroicons-book-open" variant="ghost" />
-                </UTooltip>
-                <UTooltip text="Bug Report" :popper="{ placement: 'left' }">
-                    <UButton to="https://github.com/drxvill/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
-                        variant="ghost" />
-                </UTooltip>
+                <UButton to="/dmca" icon="i-heroicons-book-open" label="DMCA" color="white" variant="ghost" />
+                <UButton to="https://github.com/drxvill/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
+                    label="Bug Report" color="white" variant="ghost" />
 
             </div>
-            <div class="flex md:hidden flex-col gap-2">
-                <UButton to="/dmca" icon="i-heroicons-book-open" label="DMCA" variant="ghost" />
+            <div class="grid md:hidden grid-cols-2 gap-2">
+                <UButton to="/dmca" icon="i-heroicons-book-open" label="DMCA" color="white" variant="ghost" />
                 <UButton to="https://github.com/drxvill/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
-                    label="Bug Report" variant="ghost" />
-
+                    label="Bug Report" color="white" variant="ghost" />
             </div>
         </div>
     </UContainer>
