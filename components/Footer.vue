@@ -15,14 +15,14 @@
                     <UButton to="/dmca" icon="i-heroicons-book-open" variant="ghost" />
                 </UTooltip>
                 <UTooltip text="Bug Report" :popper="{ placement: 'left' }">
-                    <UButton to="https://github.com/sckoorp/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
+                    <UButton to="https://github.com/drxvill/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
                         variant="ghost" />
                 </UTooltip>
 
             </div>
             <div class="flex md:hidden flex-col gap-2">
                 <UButton to="/dmca" icon="i-heroicons-book-open" label="DMCA" variant="ghost" />
-                <UButton to="https://github.com/sckoorp/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
+                <UButton to="https://github.com/drxvill/hiruki/issues" target="_blank" icon="i-heroicons-bug-ant"
                     label="Bug Report" variant="ghost" />
 
             </div>
