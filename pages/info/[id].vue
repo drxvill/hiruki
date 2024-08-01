@@ -25,8 +25,12 @@ function onAddBookmark() {
         id: data.value?.info.id,
         title: data.value?.info.title,
         cover: data.value?.info.cover,
+        format: data.value?.info.format,
+        status: data.value?.info.status,
         season: data.value?.info.season,
-        year: data.value?.info.year
+        year: data.value?.info.year,
+        score: data.value?.info.score,
+        episodes: data.value?.info.episodes
     });
 }
 
