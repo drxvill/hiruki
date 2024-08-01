@@ -8,9 +8,11 @@ const path = ref("/");
 const modal = ref(false);
 const state = reactive({ query: undefined });
 const items = [
-    [{ to: "/explore", label: "Explore", icon: "i-heroicons-fire" }],
-    [{ to: "/bookmarks", label: "Bookmarks", icon: "i-heroicons-bookmark" }],
-    [{ to: "/random", label: "Random", icon: "i-heroicons-bolt" }]
+    [{ to: "/", label: "Home", icon: "i-heroicons-home-solid" }],
+    [{ to: "/explore", label: "Explore", icon: "i-heroicons-fire-solid" }],
+    [{ to: "/bookmarks", label: "Bookmarks", icon: "i-heroicons-bookmark-solid" }],
+    [{ to: "/random", label: "Random", icon: "i-heroicons-bolt-solid" }],
+    [{ to: "/settings", label: "Settings", icon: "i-heroicons-cog-6-tooth-16-solid" }]
 ];
 
 function onSearchSubmit({ data }: FormSubmitEvent<any>) {
