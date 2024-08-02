@@ -68,16 +68,16 @@ const items = [
         <div class="hidden lg:flex flex-col gap-2">
             <NuxtImg :src="data?.info.cover" :alt="data?.info.title" format="webp" quality="80" sizes="100vw"
                 placeholder width="100" height="100" class="w-56 h-80 rounded-md object-cover" />
-            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="ghost" size="lg" block
+            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
                 v-else />
             <UButton :to="`/stream/${route.params.id}/${data?.episodes.episodes[0].id}`"
-                icon="i-heroicons-play-16-solid" label="Watch Now" variant="solid" size="lg" block
+                icon="i-heroicons-play-16-solid" label="Watch Now" variant="soft" size="lg" block
                 v-if="data?.episodes.episodes.length > 0" />
-            <UButton icon="i-heroicons-play-16-solid" label="Not Available" color="red" variant="solid" size="lg" block
+            <UButton icon="i-heroicons-play-16-solid" label="Not Available" color="red" variant="soft" size="lg" block
                 @click="toast.add({ title: 'Not Available!' })" v-else />
-            <UButton icon="i-heroicons-bars-3-16-solid" label="Episodes" variant="solid" size="lg" block
+            <UButton icon="i-heroicons-bars-3-16-solid" label="Episodes" variant="soft" size="lg" block
                 @click="modal = true" v-if="data?.episodes.episodes.length > 0" />
         </div>
         <div class="flex lg:hidden flex-col items-center gap-2">
@@ -87,16 +87,16 @@ const items = [
                 <p class="text-base font-normal">{{ data?.info.season }} {{ data?.info.year }}</p>
                 <p class="text-2xl font-bold line-clamp-3">{{ data?.info.title }}</p>
             </div>
-            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="ghost" size="lg" block
+            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
                 v-else />
             <UButton :to="`/stream/${route.params.id}/${data?.episodes.episodes[0].id}`"
-                icon="i-heroicons-play-16-solid" label="Watch Now" variant="solid" size="lg" block
+                icon="i-heroicons-play-16-solid" label="Watch Now" variant="soft" size="lg" block
                 v-if="data?.episodes.episodes.length > 0" />
-            <UButton icon="i-heroicons-play-16-solid" label="Not Available" color="red" variant="solid" size="lg" block
+            <UButton icon="i-heroicons-play-16-solid" label="Not Available" color="red" variant="soft" size="lg" block
                 @click="toast.add({ title: 'Not Available!' })" v-else />
-            <UButton icon="i-heroicons-bars-3-16-solid" label="Episodes" variant="solid" size="lg" block
+            <UButton icon="i-heroicons-bars-3-16-solid" label="Episodes" variant="soft" size="lg" block
                 @click="modal = true" v-if="data?.episodes.episodes.length > 0" />
         </div>
         <div class="flex flex-col gap-2">
@@ -105,7 +105,7 @@ const items = [
                 <p class="text-2xl font-bold line-clamp-2">{{ data?.info.title }}</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-                <UButton v-for="genre in data?.info.genres" :label="genre" color="gray" variant="solid" />
+                <UButton v-for="genre in data?.info.genres" :label="genre" color="white" />
             </div>
             <UTabs :items="items" class="w-full">
                 <template #item="{ item }">
@@ -164,7 +164,7 @@ const items = [
                 <div class="space-y-4 p-4 flex-1 overflow-y-auto h-full">
                     <div class="flex justify-between items-center">
                         <p class="text-xl font-bold">Episodes</p>
-                        <UButton icon="i-heroicons-x-mark-16-solid" variant="ghost" trailing @click="modal = false" />
+                        <UButton icon="i-heroicons-x-mark-16-solid" color="white" trailing @click="modal = false" />
                     </div>
                     <div class="grid grid-cols-2 gap-2">
                         <UButton v-for="episode in data?.episodes.episodes"
@@ -189,10 +189,9 @@ const items = [
                 </div>
                 <p class="font-medium truncate">{{ anime.title }}</p>
                 <div class="flex items-center gap-2">
-                    <UButton icon="i-heroicons-calendar-16-solid" :label="String(anime.year)" color="gray"
-                        variant="solid" size="xs" />
-                    <UButton icon="i-heroicons-star-16-solid" :label="anime.score ? anime.score : 'N/A'" color="gray"
-                        variant="solid" size="xs" />
+                    <UButton icon="i-heroicons-calendar-16-solid" :label="String(anime.year)" color="white" size="xs" />
+                    <UButton icon="i-heroicons-star-16-solid" :label="anime.score ? anime.score : 'N/A'" color="white"
+                        size="xs" />
                 </div>
             </ULink>
         </div>

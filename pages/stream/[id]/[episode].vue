@@ -26,8 +26,12 @@ function onAddBookmark() {
         id: data.value?.info.id,
         title: data.value?.info.title,
         cover: data.value?.info.cover,
+        format: data.value?.info.format,
+        status: data.value?.info.status,
         season: data.value?.info.season,
-        year: data.value?.info.year
+        year: data.value?.info.year,
+        score: data.value?.info.score,
+        episodes: data.value?.info.episodes
     });
 }
 
@@ -38,7 +42,6 @@ function onRemoveBookmark() {
     list.data.splice(index, 1);
 }
 
-const ready = ref(false);
 const modal = ref(false);
 
 const items = [
@@ -55,10 +58,6 @@ const items = [
         label: "Characters"
     }
 ];
-
-onMounted(() => {
-    ready.value = true
-});
 </script>
 
 <template>
@@ -69,22 +68,22 @@ onMounted(() => {
     <div class="grid grid-cols-1 lg:grid-cols-[auto,auto] gap-4 m-4">
         <div class="flex flex-col gap-2">
             <Player :src="data?.stream.sources.default" />
-            <UButton :to="data?.download.link" target="_blank" icon="i-heroicons-arrow-down-circle-20-solid"
-                label="Download" variant="solid" size="lg" block />
         </div>
         <div class="flex flex-col w-full md:w-full gap-2">
             <div class="flex justify-start items-center">
                 <p class="text-xl font-bold">Episodes</p>
             </div>
-            <div class="flex flex-col gap-2" v-for="episode in data?.episodes.episodes.slice(0, 9)"
+            <div class="flex flex-col gap-2" v-for="episode in data?.episodes.episodes.slice(0, 10)"
                 v-if="data?.episodes.episodes.length > 0">
                 <UButton :to="`/stream/${route.params.id}/${episode.id}`" :label="`Episode ${episode.episode}`"
-                    variant="soft" size="lg" block v-if="data?.episodes.episodes.length > 0" />
+                    variant="ghost" block v-if="data?.episodes.episodes.length > 0" />
             </div>
-            <div class="space-y-2" v-if="data?.episodes.episodes.length > 9">
-                <UDivider icon="i-heroicons-ellipsis-horizontal-20-solid" />
-                <UButton icon="i-heroicons-bars-3-16-solid" label="Episodes" variant="solid" @click="modal = true"
-                    size="lg" block v-if="data?.episodes.episodes.length > 0" />
+            <div class="space-y-2">
+                <UDivider />
+                <UButton icon="i-heroicons-bars-3-16-solid" label="Episodes" variant="soft" @click="modal = true" block
+                    v-if="data?.episodes.episodes.length > 10" />
+                <UButton :to="data?.download.link" target="_blank" icon="i-heroicons-arrow-down-circle-20-solid"
+                    label="Download" variant="soft" block />
             </div>
         </div>
     </div>
@@ -92,7 +91,7 @@ onMounted(() => {
         <div class="hidden lg:flex flex-col gap-2">
             <NuxtImg :src="data?.info.cover" :alt="data?.info.title" format="webp" quality="80" sizes="100vw"
                 placeholder width="100" height="100" class="w-56 h-80 rounded-md object-cover" />
-            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="ghost" size="lg" block
+            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
                 v-else />
@@ -104,7 +103,7 @@ onMounted(() => {
                 <p class="text-base font-normal">{{ data?.info.season }} {{ data?.info.year }}</p>
                 <p class="text-2xl font-bold line-clamp-3">{{ data?.info.title }}</p>
             </div>
-            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="ghost" size="lg" block
+            <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
                 v-else />
@@ -115,7 +114,7 @@ onMounted(() => {
                 <p class="text-2xl font-bold line-clamp-2">{{ data?.info.title }}</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-                <UButton v-for="genre in data?.info.genres" :label="genre" color="gray" variant="solid" />
+                <UButton v-for="genre in data?.info.genres" :label="genre" color="white" />
             </div>
             <UTabs :items="items" class="w-full">
                 <template #item="{ item }">

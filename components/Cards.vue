@@ -51,7 +51,7 @@ function onClearAll() {
             </ULink>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4" v-if="category === 6">
-            <div :to="`/info/${anime.id}`" class="flex items-center rounded-xl gap-4 transition-colors py-2 px-4"
+            <UButton :to="`/info/${anime.id}`" class="flex items-center rounded-xl gap-4 py-2 px-4" color="white"
                 v-for="(anime, index) in data.data">
                 <p class="w-12 text-2xl font-bold">#{{ index + 1 }}</p>
                 <div class="flex items-center w-full gap-4">
@@ -67,11 +67,9 @@ function onClearAll() {
                             <UButton icon="i-heroicons-star-16-solid" class="w-fit"
                                 :label="anime.score ? anime.score : 'N/A'" color="white" size="2xs" />
                         </div>
-                        <UButton :to="`/info/${anime.id}`" icon="i-heroicons-play-solid" label="Watch Now"
-                            variant="ghost" size="sm" />
                     </div>
                 </div>
-            </div>
+            </UButton>
         </div>
     </div>
     <div class="flex justify-between items-center" v-if="data.pagination" v-show="pagination">
@@ -80,7 +78,7 @@ function onClearAll() {
                 : category === 3 ? `/upcoming/${data.pagination.currentPage - 1}`
                     : category === 4 ? `/favorite/${data.pagination.currentPage - 1}`
                         : category === 5 ? `/movies/${data.pagination.currentPage - 1}` : '/'"
-            icon="i-heroicons-arrow-small-left-20-solid" label="Previous" variant="solid"
+            icon="i-heroicons-arrow-small-left-20-solid" label="Previous" variant="soft"
             :disabled="data.pagination.currentPage <= 1" />
         <p class="text-base font-medium">Page {{ data.pagination.currentPage }}</p>
         <UButton :to="category === 1 ? `/trending/${data.pagination.currentPage + 1}`
@@ -88,7 +86,7 @@ function onClearAll() {
                 : category === 3 ? `/upcoming/${data.pagination.currentPage + 1}`
                     : category === 4 ? `/favorite/${data.pagination.currentPage + 1}`
                         : category === 5 ? `/movies/${data.pagination.currentPage + 1}` : '/'"
-            icon="i-heroicons-arrow-small-right-20-solid" label="Next" variant="solid" trailing
+            icon="i-heroicons-arrow-small-right-20-solid" label="Next" variant="soft" trailing
             :disabled="!data.pagination.hasNextPage" />
     </div>
 </template>
