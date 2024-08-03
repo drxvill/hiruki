@@ -12,7 +12,6 @@ const { data } = await useAsyncData("categories", async () => {
 </script>
 
 <template>
-
     <Head>
         <Title>Free Anime Streaming</Title>
     </Head>
