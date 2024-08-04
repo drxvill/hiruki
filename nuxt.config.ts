@@ -1,11 +1,11 @@
 import { vite as vidstack } from "vidstack/plugins";
 
 export default defineNuxtConfig({
-    modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/google-fonts", "@nuxtjs/seo"],
+    modules: ["@nuxt/ui", "@nuxt/fonts", "@nuxt/image", "@nuxtjs/seo"],
     vue: { compilerOptions: { isCustomElement: (tag) => tag.startsWith("media-") } },
     vite: { plugins: [vidstack({ include: /player\// })] },
     devtools: { enabled: false },
-    googleFonts: { families: { Outfit: "100..900" } },
+    fonts: { families: [{ name: "Outfit", provider: "google" }] },
     colorMode: { preference: "dark" },
     site: {
         url: "https://hiruki.xyz",
