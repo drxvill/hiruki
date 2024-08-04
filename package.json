@@ -10,6 +10,7 @@
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
+        "@giscus/vue": "^3.0.0",
         "@nuxt/fonts": "^0.7.1",
         "@nuxt/image": "^1.7.0",
         "@nuxt/ui": "^2.17.0",

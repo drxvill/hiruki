@@ -181,4 +181,5 @@ const items = [
             </USlideover>
         </div>
     </div>
+    <Comments />
 </template>
