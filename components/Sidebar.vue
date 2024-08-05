@@ -3,7 +3,8 @@
 
 <template>
     <div class="fixed hidden md:flex">
-        <div class="flex flex-col justify-center gap-4 w-16 h-screen font-outfit select-none p-2">
+        <div class="flex flex-col justify-center dark:bg-neutral-950 bg-neutral-200 gap-4 w-16 h-screen font-outfit 
+        select-none p-2">
             <UTooltip text="Home" :popper="{ placement: 'right' }">
                 <UButton to="/" icon="i-heroicons-home-solid" color="white" variant="ghost" size="xl" block />
             </UTooltip>
