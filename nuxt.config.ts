@@ -15,6 +15,9 @@ export default defineNuxtConfig({
         indexable: true
     },
     runtimeConfig: {
-        API: process.env.API_URL
+        API: process.env.API_URL,
+        public: {
+            WALINE: process.env.WALINE_URL
+        }
     }
 });
