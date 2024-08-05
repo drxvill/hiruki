@@ -195,9 +195,10 @@ const items = [
                 </div>
                 <p class="font-medium truncate">{{ anime.title }}</p>
                 <div class="flex items-center gap-2">
-                    <UButton icon="i-heroicons-calendar-16-solid" :label="String(anime.year)" color="white" size="xs" />
+                    <UButton icon="i-heroicons-calendar-16-solid" :label="anime.year ? String(anime.year) : 'N/A'"
+                        color="white" size="2xs" />
                     <UButton icon="i-heroicons-star-16-solid" :label="anime.score ? anime.score : 'N/A'" color="white"
-                        size="xs" />
+                        size="2xs" />
                 </div>
             </ULink>
         </div>
