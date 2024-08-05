@@ -30,8 +30,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div :class="`sticky top-0 z-50 flex ${path !== '/' ? 'justify-between' : 'justify-end'} items-center bg-gradient-to-b 
-        dark:from-neutral-950 from-neutral-200 to-transparent py-4 px-4`">
+    <div :class="`flex ${path !== '/' ? 'justify-between' : 'justify-end'} items-center py-4 px-4`">
         <div class="flex items-center gap-4" v-if="path !== '/'">
             <UTooltip text="Go Back" :popper="{ placement: 'bottom' }">
                 <UButton icon="i-heroicons-arrow-left-20-solid" color="white" variant="ghost" size="lg"
