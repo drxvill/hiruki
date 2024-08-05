@@ -170,7 +170,7 @@ const items = [
                 <div class="space-y-4 p-4 flex-1 overflow-y-auto h-full">
                     <div class="flex justify-between items-center">
                         <p class="text-xl font-bold">Episodes</p>
-                        <UButton icon="i-heroicons-x-mark-16-solid" variant="ghost" trailing @click="modal = false" />
+                        <UButton icon="i-heroicons-x-mark-16-solid" color="white" trailing @click="modal = false" />
                     </div>
                     <div class="grid grid-cols-2 gap-2">
                         <UButton v-for="episode in data?.episodes.episodes"
