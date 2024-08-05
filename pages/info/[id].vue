@@ -136,7 +136,7 @@ const items = [
                                 <div>
                                     <UAlert title="Episodes" :description="String(data?.info.episodes)"
                                         v-if="data?.info.episodes" />
-                                    <UAlert title="Score" description="N/A" v-else />
+                                    <UAlert title="Episodes" description="N/A" v-else />
                                 </div>
                             </div>
                         </div>
