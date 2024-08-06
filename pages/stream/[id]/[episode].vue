@@ -91,9 +91,9 @@ const items = [
         <div class="hidden lg:flex flex-col gap-2">
             <NuxtImg :src="data?.info.cover" :alt="data?.info.title" format="webp" quality="80" sizes="100vw"
                 placeholder width="100" height="100" class="w-56 h-80 rounded-md object-cover" />
-            <UButton :label="data?.info.dub === true ? 'Sub & Dub' : 'Only Sub'"
-                :color="data?.info.dub === true ? 'indigo' : 'teal'" variant="soft" size="lg" block
-                v-if="data?.info.dub !== null" />
+            <UButton :label="data?.info.type" :color="data?.info.type === 'Sub & Dub'
+                ? 'amber' : data?.info.type === 'Dub Only' ? 'indigo' : data?.info.type === 'Sub Only' ? 'teal'
+                    : 'primary'" size="lg" block v-if="data?.info.type !== null" />
             <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
@@ -106,9 +106,9 @@ const items = [
                 <p class="text-base font-normal">{{ data?.info.season }} {{ data?.info.year }}</p>
                 <p class="text-2xl font-bold line-clamp-3">{{ data?.info.title }}</p>
             </div>
-            <UButton :label="data?.info.dub === true ? 'Sub & Dub' : 'Only Sub'"
-                :color="data?.info.dub === true ? 'indigo' : 'teal'" variant="soft" size="lg" block
-                v-if="data?.info.dub !== null" />
+            <UButton :label="data?.info.type" :color="data?.info.type === 'Sub & Dub'
+                ? 'amber' : data?.info.type === 'Dub Only' ? 'indigo' : data?.info.type === 'Sub Only' ? 'teal'
+                    : 'primary'" size="lg" block v-if="data?.info.type !== null" />
             <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
