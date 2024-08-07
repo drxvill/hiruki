@@ -70,7 +70,8 @@ const items = [
                 placeholder width="100" height="100" class="w-56 h-80 rounded-md object-cover" />
             <UButton :label="data?.info.type" :color="data?.info.type === 'Sub & Dub'
                 ? 'amber' : data?.info.type === 'Dub Only' ? 'indigo' : data?.info.type === 'Sub Only' ? 'teal'
-                    : 'primary'" size="lg" block v-if="data?.info.type !== null" />
+                    : 'primary'" size="lg" block
+                v-if="data?.info.type !== null && data?.info.status !== 'Not Yet Released'" />
             <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
@@ -92,7 +93,8 @@ const items = [
             </div>
             <UButton :label="data?.info.type" :color="data?.info.type === 'Sub & Dub'
                 ? 'amber' : data?.info.type === 'Dub Only' ? 'indigo' : data?.info.type === 'Sub Only' ? 'teal'
-                    : 'primary'" size="lg" block v-if="data?.info.type !== null" />
+                    : 'primary'" size="lg" block
+                v-if="data?.info.type !== null && data?.info.status !== 'Not Yet Released'" />
             <UButton icon="i-heroicons-bookmark-solid" label="Bookmarked" variant="soft" size="lg" block
                 @click="onRemoveBookmark" v-if="isBookmarked()" />
             <UButton icon="i-heroicons-bookmark" label="Bookmark" variant="ghost" size="lg" block @click="onAddBookmark"
